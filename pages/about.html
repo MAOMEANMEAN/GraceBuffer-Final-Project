@@ -3,16 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- tailwind-link -->
+    <title>About us</title>
+    <!-- pic-link -->
+    <link rel="shortcut icon" href="../assets/logo-grace-buffer.png" type="image/x-icon">
+    <!-- link tailwind-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- link for icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- link-css -->
+    <link rel="stylesheet" href="../src/output.css" />
     <!-- flowbite-link -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
-    
+<body class="bg-background-light dark:bg-gray-900 min-h-screen">
+    <!-- Header -->
+    <header>
+      <nav class="bg-primary px-4 sm:px-6 py-3 shadow-md">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <!-- Logo -->
+          <!-- Logo with negative margin to extend outside navbar -->
+          <a href="/index.html" class="flex-shrink-0 -my-2">
+            <img
+              src="../assets/logo-grace-buffer.png"
+              alt="logo"
+              class="w-15 h-15 sm:w-16 sm:h-16 object-contain"
+            />
+          </a>
 
+          <!-- Desktop Navigation Links -->
+          <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a
+              href="/index.html"
+              class="text-primary-text-color text-base lg:text-lg font-medium font-primary hover:text-secondary transition"
+              >Home</a
+            >
+            <a
+              href="../pages/menu.html"
+              class="text-primary-text-color text-base lg:text-lg font-medium font-primary hover:text-secondary transition"
+              >Menu</a
+            >
+            <a
+              href="../pages/about.html"
+              class="text-primary-text-color text-base lg:text-lg font-medium font-primary hover:text-secondary transition"
+              >About us</a
+            >
+          </div>
+
+          <!-- Right Side Actions -->
+          <div class="flex items-center space-x-2 sm:space-x-4">
+            <!-- Theme Toggle -->
+            <button
+              onclick="toggleTheme()"
+              class="p-2 hover:bg-secondary/10 rounded-full transition"
+              aria-label="Toggle theme"
+            >
+              <svg
+                id="themeIcon"
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                ></path>
+              </svg>
+            </button>
+
+            <!-- Cart -->
+            <a
+              href="./pages/cart.html"
+              class="relative p-2 hover:bg-secondary/10 rounded-full transition"
+              aria-label="Shopping cart"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+              <span
+                id="cart-count"
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold"
+                >0</span
+              >
+            </a>
+
+            <!-- Login Button (Desktop) -->
+            <a
+              href="./pages/login.html"
+              class="hidden md:block bg-secondary text-white px-4 lg:px-6 py-2 rounded-lg hover:bg-orange-600 transition font-medium font-primary text-sm lg:text-base"
+            >
+              Login
+            </a>
+            
+
+            <!-- Mobile Menu Button -->
+            <button
+              onclick="toggleMobileMenu()"
+              class="md:hidden p-2"
+              aria-label="Toggle menu"
+            >
+              <svg
+                id="menuIcon"
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+          <a
+            href="./index.html"
+            class="block text-primary-text-color font-medium font-primary hover:text-secondary transition py-2"
+            >Home</a
+          >
+          <a
+            href="./pages/menu.html"
+            class="block text-primary-text-color font-medium font-primary hover:text-secondary transition py-2"
+            >Menu</a
+          >
+          <a
+            href="./pages/about.html"
+            class="block text-primary-text-color font-medium font-primary hover:text-secondary transition py-2"
+            >About us</a
+          >
+          <a
+            href="./pages/login.html"
+            class="block w-full bg-secondary text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-medium font-primary text-center"
+          >
+            Login
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="grid">
+
+      <!-- Hero Section with Background -->
+      <section class="relative h-screen">
+        
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+          style="background-image: url('../assets/banoaboutpage.jpg');">
+            
+            <!-- Overlay -->
+          <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">  
+          <h1 class="text-5xl font-secondary mb-8 leading-tight bg-clip-text text-transparent"
+                style="background-image: url('../assets/banoaboutpage.jpg'); background-size: cover;">
+            Inside Gracebuffer: Our Journey,<br>
+            Mission &amp; Team
+          </h1>
+          <p class="text-white font-secondary text-lg md:text-xl max-w-4xl leading-relaxed">
+            Gracebuffer was founded with a simple dream: to make bakery experiences more joyful and convenient.
+            Instead of waiting in long lines, customers can order directly from their phones, and our team will bring the treats right to their table.
+          </p>
+        </div>
+      </section>
+      <section class="m-10">
+        <!-- Section-1 -->
+        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 my-10 py-5
+                    bg-lightBg dark:bg-darkBg transition-colors duration-300">
+
+          <!-- left image -->
+          <div class="flex justify-center md:justify-start rounded-2xl">
+            <img src="../assets/Coffee shop 1.jpg"
+              alt="Coffee Shop Illustration"
+              class="w-full max-w-md md:max-w-xl dark:opacity-90 rounded-2xl">
+            </div>
+
+          <!-- right text -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-secondary my-5 font-semibold text-secondary leading-tight">
+                Who are we?
+            </h2>
+
+            <p class="w-[400px] font-secondary text-gray-500  text-lg leading-relaxed">
+                    We are the scholarship student from ISTAD 
+                    Institution of pre-university generation 5 in web 
+                    design morning class.
+            </p>
+          </div>
+        </section>
+        
+        <!-- Section-2 -->
+        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-24 my-10
+                    bg-lightBg dark:bg-darkBg transition-colors duration-300">
+
+          <!-- left image -->
+          <div class="flex justify-center md:justify-start">
+            <img src="../assets/Coffee shop 2.gif"
+                    alt="Coffee Shop Illustration"
+                    class="w-full max-w-md md:max-w-xl dark:opacity-90">
+            </div>
+
+          <!-- right text -->
+          <div class="flex flex-col justify-center">
+            <h2 class="w-[350px] text-4xl md:text-5xl font-secondary font-semibold text-secondary leading-tight">
+                    Why we make 
+            </h2>
+            <h2 class="w-[350px] text-4xl md:text-5xl font-secondary font-semibold text-black dark:text-white leading-tight">
+              this website
+            </h2>
+
+            <p class="w-[400px] font-secondary mt-6 text-gray-500  text-lg leading-relaxed">
+                    Convenience – Customers can browse the menu and order directly 
+                    from their phones without standing in line.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section-3 -->
+        <section class="max-w-6xl mx-auto  grid grid-cols-1 md:grid-cols-2 gap-20">
+
+          <!-- left text -->
+          <div class="flex flex-col my-5 py-5 justify-center">
+            <h1 class="text-4xl md:text-5xl font-secondary font-semibold text-secondary mb-3">
+                    Gracebuffer Bakery
+            </h1>
+
+            <h2 class="text-3xl md:text-5xl font-secondary font-semibold text-gray-900 dark:text-white mb-6">
+                    Future Theory
+            </h2>
+
+            <p class="w-[450px] mt-6 font-secondary text-gray-500 text-lg leading-relaxed">
+                    Global Reach – One day, we hope to share Gracebuffer’s unique concept
+                    beyond our local community, inspiring bakeries worldwide to combine
+                    convenience with warmth.
+            </p>
+          </div>
+
+          <!-- right image -->
+          <div class="flex justify-center">
+            <img src="../assets/Coffee shop 3.gif"
+                    alt="Bakery Illustration"
+                    class="w-full max-w-md md:max-w-xl dark:opacity-80" />
+          </div>
+        </section>
+
+        <!-- Section-4 -->
+        <section class="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 
+                    bg-lightBg dark:bg-darkBg transition-colors duration-300">
+
+          <!-- left image -->
+          <div class="flex justify-center md:justify-start">
+            <img src="../assets/Coffee shop 4.gif"
+                    alt="Coffee Shop Illustration"
+                    class="w-full max-w-md md:max-w-xl dark:opacity-90">
+            </div>
+          
+          <!-- right text -->
+          <div class="flex flex-col justify-center">
+            <h2 class="text-4xl md:text-5xl font-semibold text-secondary leading-tight">
+                    The Main Purpose
+            </h2>
+
+                  <h2 class="text-4xl md:text-5xl font-secondary my-3 font-semibold text-black dark:text-white leading-tight">
+                    of Gracebuffer’s 
+                  </h2>
+
+                  <h2 class="text-4xl md:text-5xl font-secondary font-semibold text-black dark:text-white leading-tight">
+                    Website.
+                  </h2>
+
+                <p class="w-[380px] font-secondary mt-6 text-gray-500 my-3 text-lg leading-relaxed">
+                    Present our mission – showing our 
+                    commitment to quality, convenience, and 
+                    community.
+                </p>
+            </div>
+        </section>
+      </section>
+    <div class="container mx-auto px-8 py-12">
+        
+      <!-- Our Mentors Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-secondary font-semibold my-8 py-5 text-black dark:text-white mb-12">Our Mentors</h2>
+            <div class="flex justify-center gap-10">
+                
+                <!-- Mentor 1: Eung Lyzhia -->
+                <div class="flex flex-col items-center">
+        <div class="w-40 h-40  rounded-full overflow-hidden mb-4 shadow-2xl">
+                        <img src="../assets/cherlyzhia.png" alt="Eung Lyzhia" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-base font-secondary font-medium text-black dark:text-white mb-1">Eung Lyzhia</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mentor</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/lyzhia.eung" target="_blank" class="w-7 h-7 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/lyzhiaa" target="_blank" class="w-7 h-7 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/lyzhia" target="_blank" class="w-7 h-7 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mentor 2: Sreng Chipor -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-4 shadow-2xl">
+                        <img src="../assets/cherjinpor.png" alt="Sreng Chipor" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-base font-secondary font-medium text-black dark:text-white mb-1">Sreng Chipor</h3>
+                    <p class="text-sm text-gray-500 mb-3">Mentor</p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/sreng.chipor" target="_blank" class="w-7 h-7 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="w-7 h-7 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/jiporsreng" target="_blank" class="w-7 h-7 rounded-full flex items-center justify-center  transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Team Members Section -->
+        <div class="text-center">
+            <h2 class="text-4xl font-secondary font-semibold my-8 py-5 text-black dark:text-white mb-14">Our Team Members</h2>
+            
+            <!-- First Row - 4 Members -->
+            <div class="flex justify-center gap-14 mb-12 flex-wrap">
+                
+                <!-- Member 1: Mao Meanmean -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3 shadow-xl">
+                        <img src="../assets/manman.png" alt="Mao Meanmean" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">Mao Meanmean</h3>
+                    <p class="text-xs font-secondary text-gray-500 mb-2">Leader</p>
+                    <div class="flex gap-2">
+                        <a href=" https://web.facebook.com/mao.meanmean.90/" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href=" https://github.com/MAOMEANMEAN" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/meanmean_mao" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Member 2: Bi Aruntitya-->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40 rounded-full overflow-hidden mb-3  shadow-xl">
+                        <img src="../assets/titya.png" alt="Bi Aruntitya" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1 ">Bi Aruntitya</h3>
+                    <p class="text-xs font-secondary text-gray-500 mb-2">Sub leader</p>
+                    <div class="flex gap-2">
+                        <a href="https://www.facebook.com/bi.aruntitya" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/TityaXD" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/tityaxd16" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+ 
+                <!-- Member 3:Thach Soksothea -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3  shadow-xl">
+                        <img src="../assets/sothea.png" alt="Thach Soksothea" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">Thach Soksothea</h3>
+                    <p class="text-xs text-gray-500 mb-2">Member</p>
+                    <div class="flex gap-2">
+                        <a href="https://web.facebook.com/so.thea.399817?_rdc=1&_rdr#" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/sothea279" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/Itmee_Iris" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center  transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Member 4: khat yuklean -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3 shadow-xl">
+                        <img src="../assets/yuleang.png" alt="khat yuklean" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">khat yuklean</h3>
+                    <p class="text-xs text-gray-500 mb-2">Member</p>
+                    <div class="flex gap-2">
+                        <a href="https://www.facebook.com/youl.leang" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/khatyuklean-commits" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/Pphuphu" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Second Row - 3 Members -->
+            <div class="flex justify-center gap-14 flex-wrap">
+                
+                <!-- Member 5: Moeun Kimhour  -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3 shadow-xl">
+                        <img src="../assets/kimhor.jpg" alt="Moeun Kimhour " class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">Moeun Kimhour </h3>
+                    <p class="text-xs text-gray-500 mb-2">Member</p>
+                    <div class="flex gap-2">
+                        <a href=" https://www.facebook.com/share/14LSm9AiB1o/?mibextid=wwXIfr" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center  transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href=" https://github.com/kimhour-moeun" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/moeunkimhour" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center  transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Member 6: An Channsina -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3 shadow-xl">
+                        <img src="../assets/sina.png" alt="An Channsina" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">An Channsina</h3>
+                    <p class="text-xs text-gr text-gray-500 mb-2">Member</p>
+                    <div class="flex gap-2">
+                        <a href="https://www.facebook.com/share/1CgAe11JEq/" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/anchannsina21-ui" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/chann_nasi_216" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Member 7: Din Sopharachna -->
+                <div class="flex flex-col items-center">
+                    <div class="w-40 h-40  rounded-full overflow-hidden mb-3 shadow-xl">
+                        <img src="../assets/rachna.png" alt="Din Sopharachna" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-sm font-secondary text-black dark:text-white mb-1">Din Sopharachna</h3>
+                    <p class="text-xs text-gray-500 mb-2">Member</p>
+                    <div class="flex gap-2">
+                        <a href="https://www.facebook.com/share/16aPWNAxXD/?mibextid=wwXIfr" target="_blank" class="w-6 h-6 rounded-full  flex items-center justify-cente transition">
+                            <i class="fab fa-facebook text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://github.com/dsopharachna-tech" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-github text-lg hover:text-gray-500 text-black dark:text-white"></i>
+                        </a>
+                        <a href="https://t.me/ALix_1011" target="_blank" class="w-6 h-6 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-telegram text-lg hover:text-blue-500 text-black dark:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </main>
+    
+    <!-- Footer -->
+     <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
+          <!-- Sponsored by Section -->
+          <div>
+            <h3
+              class="text-3xl sm:text-4xl font-extra-bold mb-6 text-primary-text-color"
+            >
+              Sponsored by
+            </h3>
+            <div class="flex flex-wrap gap-4 items-center">
+              <div
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
+              >
+                <img
+                  src="../assets/logo-istad.png"
+                  alt="logo-istad"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
+              >
+                <img
+                  src="../assets/logo-grace-buffer.png"
+                  alt="logo-gracebuffer"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div>
+            <h3
+              class="text-xl sm:text-2xl font-semibold-bold mb-4 sm:mb-6 text-primary-text-color"
+            >
+              Quick Links
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/menu.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
+                  >Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../pages/about.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
+                  >About us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Subscribe Section -->
+          <div>
+            <h3
+              class="text-xl sm:text-2xl font-semibold-bold mb-4 text-primary-text-color"
+            >
+              Subscribe
+            </h3>
+            <p class="text-sm sm:text-base text-primary-text-color mb-4">
+              Join our newsletter for update special and menus.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                id="emailInput"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-secondary bg-white"
+              />
+              <button
+                onclick="subscribe()"
+                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-semibold whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </div>
+            <p class="text-xs sm:text-sm text-primary-text-color mt-3">
+              By subscribing, you consent to our
+              <a
+                href="#privacy"
+                class="underline hover:text-secondary font-medium"
+                >Privacy Policy</a
+              >.
+            </p>
+          </div>
+        </div>
+        
+
+        <!-- Footer Bottom -->
+        <div
+          class="border-t-2 border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p
+            class="text-sm sm:text-base font-semibold text-primary-text-color text-center md:text-left"
+          >
+            © 2025 GraceBuffer, All rights reserved.
+          </p>
+          <div class="flex space-x-5">
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Facebook"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Twitter -->
+            <a
+              href="#"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Twitter"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Instagram"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                ></path>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a
+              href="#"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="YouTube"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- script -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script src="../js/about.js"></script>
 </body>
 </html>
