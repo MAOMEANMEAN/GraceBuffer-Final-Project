@@ -3,17 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- tailwind-link -->
-    <!-- flowbite-link -->
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <title>Shopping Cart</title>
+    <link rel="icon" href="../assets/images/logo-grace-buffer.png">
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    
+<body class="bg-gray-50">
 
+    <main class="pt-24 pb-12 min-h-screen">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <!-- Not Logged In Message -->
+            <div id="not-logged-in" class="hidden text-center py-20">
+                <i class="fas fa-user-lock text-gray-300 text-6xl mb-4"></i>
+                <h2 class="text-2xl font-semibold text-gray-600 mb-4">Please Login First</h2>
+                <p class="text-gray-500 mb-6">You need to login to view your shopping cart</p>
+                <a href="/pages/login.html" class="inline-block bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition">
+                    <i class="fas fa-sign-in-alt mr-2"></i> Login
+                </a>
+            </div>
 
-    <!-- script -->
-    <script src="../js/cart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+            <!-- Loading -->
+            <div id="loading" class="hidden text-center py-20">
+                <div class="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-amber-600"></div>
+                <p class="text-gray-600 mt-4">Loading your cart...</p>
+            </div>
+
+            <!-- Cart Header -->
+            <div id="cart-header" class="hidden mb-8">
+                <h1 class="text-4xl font-bold">Shopping Cart</h1>
+            </div>
+
+            <!-- Empty Cart -->
+            <div id="empty-cart" class="hidden text-center py-20">
+                <i class="fas fa-shopping-cart text-gray-300 text-6xl mb-4"></i>
+                <h2 class="text-2xl font-semibold text-gray-600 mb-4">Your cart is empty</h2>
+                <p class="text-gray-500 mb-6">Add some delicious items to get started!</p>
+                <a href="/pages/menu.html" class="inline-block bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition">
+                    Browse Menu
+                </a>
+            </div>
+
+            <!-- Cart Content -->
+            <div id="cart-content" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Items List -->
+                <div class="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+                    <h2 class="text-2xl font-bold mb-4">Cart Items</h2>
+                    <div id="cart-items" class="space-y-4"></div>
+                </div>
+
+                <!-- Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-2xl shadow p-6 sticky top-24">
+                        <h2 class="text-2xl font-bold mb-6 pb-4 border-b">Order Summary</h2>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between">
+                                <span>Items (<span id="total-items">0</span>)</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Service Fee</span>
+                                <span id="service-fee">$0.50</span>
+                            </div>
+                            <div class="border-t pt-3 flex justify-between text-xl font-bold">
+                                <span>Total</span>
+                                <span id="grand-total" class="text-amber-600">$0.00</span>
+                            </div>
+                        </div>
+
+                        <button onclick="checkout()" class="w-full bg-amber-500 text-white py-3 rounded-xl font-bold hover:bg-amber-600 transition">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/cart-manager.js"></script>
+    <script src="../components/navbar.js"></script>
+    <script>
+        async function loadCart() {
+            const notLoggedIn = document.getElementById('not-logged-in');
+            const loading = document.getElementById('loading');
+            const cartHeader = document.getElementById('cart-header');
+            const empty = document.getElementById('empty-cart');
+            const content = document.getElementById('cart-content');
+            const items = document.getElementById('cart-items');
+
+            // Check if user is logged in
+            if (!window.cartManager.isLoggedIn()) {
+                notLoggedIn.classList.remove('hidden');
+                loading.classList.add('hidden');
+                cartHeader.classList.add('hidden');
+                empty.classList.add('hidden');
+                content.classList.add('hidden');
+                return;
+            }
+
+            // Show loading
+            loading.classList.remove('hidden');
+            notLoggedIn.classList.add('hidden');
+            cartHeader.classList.add('hidden');
+            empty.classList.add('hidden');
+            content.classList.add('hidden');
+
+            // Load cart from API
+            await window.cartManager.loadCart();
+            const cart = window.cartManager.getCart();
+
+            // Hide loading
+            loading.classList.add('hidden');
+            cartHeader.classList.remove('hidden');
+
+            if (cart.length === 0) {
+                empty.classList.remove('hidden');
+                content.classList.add('hidden');
+                return;
+            }
+
+            empty.classList.add('hidden');
+            content.classList.remove('hidden');
+
+            items.innerHTML = cart.map((item, i) => `
+                <div class="flex gap-4 p-4 border rounded-xl hover:shadow-md transition">
+                    <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded-lg">
+                    
+                    <div class="flex-1">
+                        <h3 class="font-bold text-lg">${item.name}</h3>
+                        <p class="text-sm text-gray-500">Sugar: ${item.sugarLevel} | Size: ${item.size}</p>
+                        <p class="font-semibold text-amber-600 mt-2">$${item.price.toFixed(2)} each</p>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button onclick="changeQty('${item.id}', -1)" class="w-8 h-8 bg-gray-200 rounded-full hover:bg-gray-300 transition">
+                            <i class="fas fa-minus text-xs"></i>
+                        </button>
+                        <span class="font-bold w-8 text-center">${item.quantity}</span>
+                        <button onclick="changeQty('${item.id}', 1)" class="w-8 h-8 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition">
+                            <i class="fas fa-plus text-xs"></i>
+                        </button>
+                        <button onclick="removeItem('${item.id}')" class="ml-2 text-red-500 hover:text-red-700 transition">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold text-gray-800">$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const cart = window.cartManager.getCart();
+            const subtotal = window.cartManager.getCartTotal();
+            const serviceFee = cart.length > 0 ? 0.50 : 0;
+            const total = subtotal + serviceFee;
+
+            document.getElementById('total-items').textContent = window.cartManager.getCartCount();
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('service-fee').textContent = `$${serviceFee.toFixed(2)}`;
+            document.getElementById('grand-total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        async function changeQty(productId, delta) {
+            const cart = window.cartManager.getCart();
+            const item = cart.find(i => i.id === productId);
+            
+            if (item) {
+                const newQty = item.quantity + delta;
+                await window.cartManager.updateQuantity(productId, newQty);
+                await loadCart();
+            }
+        }
+
+        async function removeItem(productId) {
+            if (confirm('Remove this item from cart?')) {
+                await window.cartManager.removeFromCart(productId);
+                await loadCart();
+            }
+        }
+
+        function checkout() {
+            const cart = window.cartManager.getCart();
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            // Save cart for checkout page
+            localStorage.setItem('checkoutCart', JSON.stringify(cart));
+            
+            // TODO: Redirect to checkout page
+            alert('Checkout coming soon! Your items are saved.');
+            // window.location.href = '/pages/checkout.html';
+        }
+
+        // Load cart when page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadCart();
+        });
+
+        // Reload cart when it updates
+        window.addEventListener('cartUpdated', async () => {
+            await loadCart();
+        });
+    </script>
 </body>
 </html>

@@ -3,178 +3,649 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- tailwind-link -->
-    <link rel="stylesheet" href="./src/output.css" />
-    <!-- flowbite-link -->
+    <title>GraceBuffer</title>
+    <!-- icon -->
+    <link
+      rel="shortcut icon"
+      href="../assets/images/logo-grace-buffer.png"
+      type="image/x-icon"
+    />
+    <!-- Tailwind link -->
+    <link rel="stylesheet" href="src/output.css" />
+    <!-- Flowbite link -->
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
       rel="stylesheet"
     />
+    <!-- CDN link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-background-light">
-    <!-- Header -->
-    <header>
-      <nav class="bg-primary px-6 py-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <!-- Logo -->
-            <img
-              src="assets/logo-grace-buffer.png"
-              alt="logo-istad"
-              class="w-14 h-14 object-contain"
-            />
-
-          <!-- Navigation Links -->
-          <div class="flex items-center space-x-8">
-            <a
-              href="#home"
-              class="text-black font-medium hover:text-secondary transition"
-              >Home</a
-            >
-            <a
-              href="#menu"
-              class="text-black font-medium hover:text-secondary transition"
-              >Menu</a
-            >
-            <a
-              href="#about"
-              class="text-black font-medium hover:text-secondary transition"
-              >About us</a
-            >
-          </div>
-
-          <!-- Right Side Actions -->
-          <div class="flex items-center space-x-4">
-            <!-- Theme Toggle -->
-            <button
-              onclick="toggleTheme()"
-              class="p-2 hover:bg-secondary rounded-full transition"
-              aria-label="Toggle theme"
-            >
-              <svg
-                id="themeIcon"
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path>
-              </svg>
-            </button>
-
-            <!-- Shopping Cart -->
-            <button
-              class="p-2 hover:bg-secondary rounded-full transition"
-              aria-label="Shopping cart"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </button>
-
-            <!-- Login Button -->
-            <button
-              class="hidden md:block bg-secondary text-white px-6 py-2 rounded-lg hover:bg-secondary transition font-medium"
-            >
-              Login
-            </button>
-
-            <!-- Mobile Menu Toggle -->
-            <button
-              onclick="toggleMobileMenu()"
-              class="md:hidden p-2"
-              aria-label="Toggle menu"
-            >
-              <svg
-                id="menuIcon"
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-          <a
-            href="#home"
-            class="block text-black font-medium hover:text-secondary transition"
-            >Home</a
-          >
-          <a
-            href="#menu"
-            class="block text-black font-medium hover:text-secondary transition"
-            >Menu</a
-          >
-          <a
-            href="#about"
-            class="block text-black font-medium hover:text-secondary transition"
-            >About us</a
-          >
-          <button
-            class="w-full bg-secondary text-white px-6 py-2 rounded-lg hover:bg-[#e67d1f] transition font-medium"
-          >
-            Login
-          </button>
-        </div>
-      </nav>
-    </header>
-
+  <body
+    class="bg-background-light theme-transition dark:bg-background-darkmode"
+  >
     <!-- Main Content -->
     <main>
-      <div class="min-h-[400px] flex items-center justify-center">
-        <p class="text-2xl text-black">Your content goes here...</p>
-      </div>
+      <!-- Hero Section -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-6xl font-semibold font-primary mb-6 leading-tight">
+              <span
+                class="text-primary-text text-primary-text-color dark:text-white"
+                >Welcome To</span
+              ><br />
+              <span class="text-secondary">GraceBuffer</span>
+            </h1>
+            <p
+              class="text-secondary-text-color dark:text-gray-500 font-primary text-lg mb-8 leading-relaxed"
+            >
+              A crisp buttery tart shell filled with smooth pastry cream and
+              topped with an assortment of fresh fruits like strawberries, kiwi,
+              blueberries, raspberries, finished with a glossy glaze for a
+              vibrant and refreshing dessert.
+            </p>
+            <a
+              href="./pages/menu.html"
+              class="inline-block bg-secondary text-white font-primary px-8 py-3 rounded-2xl font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Explore Menu →
+            </a>
+          </div>
+          <div class="flex justify-center">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-3xl"
+              ></div>
+              <img
+                src="./assets/images/products/pastry/hero-image.png"
+                alt="Hero"
+                class="relative rounded-full shadow-2xl w-[500px] h-[500px] object-cover border-8 border-orange-400"
+                onerror="this.src='./assets/images/products/pastry/cake.jpg'"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Cards -->
+      <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            onclick="window.location.href='./pages/menu-pastry.html'"
+            class="bg-gradient-to-br from-orange-200 via-orange-300 to-orange-400 p-10 rounded-3xl cursor-pointer hover:shadow-2xl transition-all transform hover:scale-105 relative overflow-hidden"
+          >
+            <div class="relative z-10">
+              <h3
+                class="text-4xl font-semibold font-primary text-secondary mb-3"
+              >
+                Pastries
+              </h3>
+              <p class="text-orange-700 text-lg mb-6 font-medium font-primary">
+                Fresh and<br />Sweet
+              </p>
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-orange-200/50 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-secondary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <img
+              src="./assets/images/products/pastry/pastry-card.png"
+              alt="Pastries"
+              class="absolute right-8 bottom-8 w-56 h-56 object-cover drop-shadow-2xl"
+            />
+          </div>
+
+          <div
+            onclick="window.location.href='./pages/menu-drink.html'"
+            class="bg-gradient-to-br from-green-200 via-green-300 to-green-400 p-10 rounded-3xl cursor-pointer hover:shadow-2xl transition-all transform hover:scale-105 relative overflow-hidden"
+          >
+            <div class="relative z-10">
+              <h3
+                class="text-4xl font-primary text-green-800 mb-3 font-semibold"
+              >
+                Drinks
+              </h3>
+              <p class="text-green-700 text-lg mb-6 font-medium font-primary">
+                Fresh and<br />Bright
+              </p>
+              <div
+                class="inline-flex items-center justify-center w-12 h-12 bg-green-200/60 rounded-full"
+              >
+                <svg
+                  class="w-6 h-6 text-green-800"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <img
+              src="./assets/images/products/drinks/matcha-card.png"
+              alt="Drinks"
+              class="absolute right-8 bottom-8 w-56 h-56 object-cover drop-shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Products Section -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+          <h2
+            class="text-5xl font-primary dark:text-white font-semibold mb-4 text-primary-text"
+          >
+            Popular Product
+          </h2>
+          <p class="text-gray-600 text-lg font-primary">
+            Discover our most loved items
+          </p>
+        </div>
+
+        <!-- Products Grid: 2 Rows x 4 Columns = 8 Products -->
+        <div
+          id="featured-products"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <!-- Products will be loaded here by home.js -->
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="text-center mb-4">
+          <div class="flex justify-center gap-3 mb-8">
+            <div class="w-3 h-3 rounded-full border-2 border-secondary"></div>
+            <div class="w-3 h-3 rounded-full border-2 border-secondary"></div>
+            <div class="w-3 h-3 rounded-full border-2 border-secondary"></div>
+          </div>
+          <h2
+            class="text-5xl dark:text-white font-bold font-primary mb-16 text-primary-text"
+          >
+            Why Chose our <span class="text-secondary">Dessert</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="text-center p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3
+              class="text-2xl font-semibold font-primary mb-4 text-primary-text"
+            >
+              Quality Dessert
+            </h3>
+            <p class="text-secondary-text-color leading-relaxed font-primary">
+              Keep healthy dessert ready available. When you get hungry you're
+              more likely.
+            </p>
+          </div>
+          <div
+            class="text-center p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-primary-text">
+              Super Taste
+            </h3>
+            <p class="text-secondary-text-color leading-relaxed font-primary">
+              Keep healthy dessert restate available. When you get hungry,
+              you're more likely to eat.
+            </p>
+          </div>
+          <div
+            class="text-center p-10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <div
+              class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <svg
+                class="w-10 h-10 text-secondary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-primary-text">
+              Fast Service
+            </h3>
+            <p class="text-secondary-text-color leading-relaxed font-primary">
+              Keep healthy food ready available. When you get hungry, you're
+              more likely to eat.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- View of Drinks and Pastries -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2
+          class="text-5xl font-semibold dark:text-white mb-12 text-primary-text font-primary"
+        >
+          View of drinks and pastries
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-auto">
+          <!-- Left Column - Tall pastry -->
+          <div
+            class="row-span-2 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/pastry/pastry-powder.png"
+              alt="Pastry 1"
+              class="w-full h-full object-cover"
+              onerror="this.src='./assets/images/products/pastry/pastry-card.png'"
+            />
+          </div>
+
+          <!-- Middle Left Column -->
+          <div
+            class="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/drinks/grape-iced.png"
+              alt="Drink 1"
+              class="w-full h-64 object-cover"
+              onerror="this.src='./assets/images/products/drinks/matcha-card.png'"
+            />
+          </div>
+
+          <!-- Chocolate drink - tall -->
+          <div
+            class="row-span-2 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/drinks/ice-latte-cream.png"
+              alt="Chocolate Drink"
+              class="w-full h-full object-cover"
+              onerror="this.src='./assets/images/products/drinks/matcha-card.png'"
+            />
+          </div>
+
+          <!-- Right Column - Meringue -->
+          <div
+            class="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/pastry/crosaint-fruit.png"
+              alt="Meringue"
+              class="w-full h-64 object-cover"
+              onerror="this.src='./assets/images/products/pastry/cake.jpg'"
+            />
+          </div>
+
+          <!-- Pastry with berries -->
+          <div
+            class="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/pastry/grape-cream-pastry.png"
+              alt="Pastry 2"
+              class="w-full h-64 object-cover"
+              onerror="this.src='./assets/images/products/pastry/cake.jpg'"
+            />
+          </div>
+
+          <!-- Iced coffee -->
+          <div
+            class="rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:scale-105"
+          >
+            <img
+              src="./assets/images/products/drinks/iced-latte.png"
+              alt="Iced Coffee"
+              class="w-full h-64 object-cover"
+              onerror="this.src='./assets/images/products/drinks/matcha-card.png'"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Fresh Juice Section -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <div
+          class="bg-white rounded-3xl p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+          <div>
+            <h2 class="text-5xl font-bold mb-6">
+              <span class="text-secondary font-primary">Fresh &</span><br />
+              <span class="text-primary-text dark:text-white font-primary"
+                >bright juice</span
+              >
+            </h2>
+            <p
+              class="text-secondary-text-color text-lg leading-relaxed font-primary"
+            >
+              Need a boost? We squeeze every drop of our delicious orange juice
+              fresh, sweet, and vibrant every single morning, just for you. Stop
+              by and grab your perfect start to the day!
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-orange-200 to-yellow-400 rounded-full blur-2xl opacity-60"
+              ></div>
+              <img
+                src="./assets/images/products/drinks/orange-juice.png"
+                alt="Fresh Juice"
+                class="relative w-96 h-96 object-cover rounded-full shadow-2xl border-8 border-orange-200"
+                onerror="this.src='./assets/images/products/drinks/matcha-card.png'"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Basic Ingredients -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2
+          class="text-3xl md:text-5xl font-semibold mb-8 dark:text-white md:mb-16 text-primary-text font-primary"
+        >
+          Basic Ingredients
+        </h2>
+
+        <!-- Desktop: Single row with flex -->
+        <div class="hidden lg:flex justify-between items-end gap-6">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/egg.png"
+                alt="Eggs"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Eggs
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/milk.png"
+                alt="Milk"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Milk
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/sugar.png"
+                alt="Sugar"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Sugar
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/salt.png"
+                alt="Salt"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Salt
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/flour.png"
+                alt="Flour"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Flour
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-32 h-32 bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/yeast.png"
+                alt="Yeast"
+                class="w-24 h-24 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-xl font-semibold text-primary-text dark:text-white font-primary"
+            >
+              Yeast
+            </h3>
+          </div>
+        </div>
+
+        <!-- Mobile/Tablet: Grid layout -->
+        <div class="grid grid-cols-3 lg:hidden gap-6 md:gap-8">
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/egg.png"
+                alt="Eggs"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Eggs
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/milk.png"
+                alt="Milk"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Milk
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/sugar.png"
+                alt="Sugar"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Sugar
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/salt.png"
+                alt="Salt"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Salt
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/flour.png"
+                alt="Flour"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Flour
+            </h3>
+          </div>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-20 h-20 md:w-28 md:h-28 bg-white rounded-full shadow-lg flex items-center justify-center mb-3 hover:shadow-2xl transition-all transform hover:scale-110"
+            >
+              <img
+                src="./assets/images/products/yeast.png"
+                alt="Yeast"
+                class="w-16 h-16 md:w-22 md:h-22 object-contain"
+                onerror="this.style.display='none'"
+              />
+            </div>
+            <h3
+              class="text-sm md:text-lg font-semibold dark:text-white text-primary-text font-primary"
+            >
+              Yeast
+            </h3>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary px-6 py-12">
+    <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
       <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <!-- Sponsored By Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
+          <!-- Sponsored by Section -->
           <div>
-            <h3 class="text-3xl font-bold mb-6">Sponsored by</h3>
-            <div class="flex space-x-6 items-center">
-              <!-- Logo-ISTAD -->
+            <h3
+              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color"
+            >
+              Sponsored by
+            </h3>
+            <div class="flex flex-wrap gap-4 items-center">
               <div
-                class="w-30 h-30 flex items-center justify-center flex-shrink-0"
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
               >
                 <img
-                  src="assets/logo-istad.png"
+                  src="assets/images/logo-istad.png"
                   alt="logo-istad"
                   class="w-full h-full object-contain"
                 />
               </div>
-              <!-- Logo-GraceBuffer-->
               <div
-                class="w-35 h-35 flex items-center justify-center flex-shrink-0"
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
               >
                 <img
-                  src="assets/logo-grace-buffer.png"
+                  src="assets/images/logo-grace-buffer.png"
                   alt="logo-gracebuffer"
                   class="w-full h-full object-contain"
                 />
@@ -182,28 +653,32 @@
             </div>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Quick Links Section -->
           <div>
-            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <h3
+              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color"
+            >
+              Quick Links
+            </h3>
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#home"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="./index.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="#menu"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="../pages/menu.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >Menu</a
                 >
               </li>
               <li>
                 <a
-                  href="#about"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="../pages/about.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >About us</a
                 >
               </li>
@@ -212,92 +687,100 @@
 
           <!-- Subscribe Section -->
           <div>
-            <h3 class="text-xl font-bold mb-4">Subscribe</h3>
-            <p class="text-sm text-black mb-4">
+            <h3
+              class="text-xl sm:text-2xl font-semibold font-primary mb-4 text-primary-text-color"
+            >
+              Subscribe
+            </h3>
+            <p
+              class="text-sm sm:text-base text-primary-text-color font-primary mb-4"
+            >
               Join our newsletter for update special and menus.
             </p>
-            <div class="flex gap-2">
+            <div
+              class="flex flex-col sm:flex-row gap-2 font-primary text-secondary-text-color"
+            >
               <input
                 type="email"
                 id="emailInput"
                 placeholder="Enter your email"
-                class="flex-1 px-4 py-2 rounded-lg border-2 border-gray-600 focus:outline-none focus:border-[#e67d1f]"
+                class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-secondary bg-white"
               />
               <button
                 onclick="subscribe()"
-                class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-[#e67d1f] transition font-medium whitespace-nowrap"
+                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-primary font-semibold whitespace-nowrap"
               >
                 Subscribe
               </button>
             </div>
-            <p class="text-xs text-black mt-3">
+            <p
+              class="text-xs sm:text-sm text-primary-text-color mt-3 font-primary"
+            >
               By subscribing, you consent to our
-              <a href="#privacy" class="underline hover:text-secondary"
+              <a
+                href="#privacy"
+                class="underline hover:text-secondary font-medium font-primary"
                 >Privacy Policy</a
               >.
             </p>
           </div>
         </div>
 
-        <!-- Bottom Bar -->
+        <!-- Footer Bottom -->
         <div
-          class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center"
+          class="border-t-2 border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p class="text-sm font-semibold text-black mb-4 md:mb-0">
+          <p
+            class="text-sm sm:text-base font-primary font-semibold text-primary-text-color text-center md:text-left"
+          >
             © 2025 GraceBuffer, All rights reserved.
           </p>
-
-          <!-- Social Media Icons -->
-          <div class="flex space-x-4">
+          <div class="flex space-x-5">
+            <!-- Facebook -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="Website"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Facebook"
             >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                 ></path>
               </svg>
             </a>
+            <!-- Twitter -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
+              class="text-primary-text-color hover:text-secondary transition"
               aria-label="Twitter"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
                 ></path>
               </svg>
             </a>
+            <!-- Instagram -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="YouTube"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Instagram"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M23 9.71a8.5 8.5 0 00-.91-4.13 2.92 2.92 0 00-1.72-1A78.36 78.36 0 0012 4.27a78.45 78.45 0 00-8.34.3 2.87 2.87 0 00-1.46.74c-.9.83-1 2.25-1.1 3.45a48.29 48.29 0 000 6.48 9.55 9.55 0 00.3 2 3.14 3.14 0 00.71 1.36 2.86 2.86 0 001.49.78 45.18 45.18 0 006.5.33c3.5.05 6.57 0 10.2-.28a2.88 2.88 0 001.53-.78 2.49 2.49 0 00.61-1 10.58 10.58 0 00.52-3.4c.04-.56.04-3.94.04-4.54zM9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08z"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                 ></path>
               </svg>
             </a>
+            <!-- YouTube -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="Instagram"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="YouTube"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                 ></path>
               </svg>
             </a>
@@ -305,14 +788,125 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="../js/login.js"></script>
+    <script defer src="components/navbar.js"></script>
+    <script src="./js/spaghetti.js"></script>
+    <script>
+      const baseUrl = "https://gracebuffer-api.srengchipor.dev/api/v1/";
 
-    <!-- script -->
-    <script src="js/config.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+      // Get products
+      async function getDrinks(page = 0, size = 8) {
+        try {
+          const response = await fetch(
+            `${baseUrl}products?page=${page}&size=${size}`,
+            {
+              method: "GET",
+              headers: { accept: "*/*" },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error("Error:", error);
+          return null;
+        }
+      }
+
+      // Create product card
+      function createProductCard(product) {
+        const productId = product.uuid;
+
+        return `
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer" 
+                     onclick="window.location.href='./pages/drink-detail.html?id=${productId}'">
+                    <img src="${
+                      product.thumbnail || "https://via.placeholder.com/300x200"
+                    }" 
+                         alt="${product.name}"
+                         class="w-full h-48 object-cover rounded-t-2xl line-clamp-1">
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold font-primary mb-2 line-clamp-1">${product.name}</h3>
+                        <p class="text-gray-600 font-primary text-sm mb-4 line-clamp-2">${
+                          product.description || "Delicious product"
+                        }</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-semibold font-primary text-secondary">$${
+                              product.price
+                            }</span>
+                            <button onclick="event.stopPropagation(); alert('Added to cart!')" 
+                                    class="bg-orange-400 text-white px-4 py-2 rounded-lg hover:bg-orange-500">
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+
+      // Load featured products
+      async function loadFeaturedProducts() {
+        const container = document.getElementById("featured-products");
+
+        if (!container) {
+          console.error("Container not found!");
+          return;
+        }
+
+        // Show loading
+        container.innerHTML = `
+                <div class="col-span-full text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                    <p class="ml-4 text-gray-600">Loading products...</p>
+                </div>
+            `;
+
+        // Get products
+        const response = await getDrinks();
+
+        if (!response || !response.data || !response.data.content) {
+          container.innerHTML =
+            '<p class="col-span-full text-center text-gray-600">No products available</p>';
+          return;
+        }
+
+        const products = response.data.content.slice(0, 8); // First 8 products
+
+        // Display products
+        container.innerHTML = "";
+        products.forEach((product) => {
+          container.innerHTML += createProductCard(product);
+        });
+      }
+
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Theme toggle
+      function toggleTheme() {
+        document.body.classList.toggle("dark");
+      }
+
+      // Subscribe
+      function subscribe() {
+        const email = document.getElementById("emailInput").value;
+        if (email) {
+          alert("Thank you for subscribing!");
+          document.getElementById("emailInput").value = "";
+        }
+      }
+
+      // Load when page ready
+      window.addEventListener("DOMContentLoaded", () => {
+        loadFeaturedProducts();
+      });
+    </script>
   </body>
 </html>

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
+    <!-- Icon -->
     <link rel="icon" href="../assets/logo-grace-buffer.png">
     <!-- tailwind-link -->
     <link rel="stylesheet" href="../src/output.css">
     <!-- Load Lucide icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- flowbite-link -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
      <style>
@@ -27,180 +30,47 @@
         }
     </style>
 </head>
-<body class="bg-background-light">
-    <!-- Header -->
-    <header>
-      <nav class="bg-primary px-6 py-4 shadow-md">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <!-- Logo -->
-            <img
-              src="../assets/logo-grace-buffer.png"
-              alt="logo-istad"
-              class="w-14 h-14 object-contain"
-            />
+<body class="bg-background-light dark:bg-background-darkmode">
 
-          <!-- Navigation Links -->
-          <div class="flex items-center space-x-8">
-            <a
-              href="#home"
-              class="text-black font-medium hover:text-secondary transition"
-              >Home</a
-            >
-            <a
-              href="#menu"
-              class="text-black font-medium hover:text-secondary transition"
-              >Menu</a
-            >
-            <a
-              href="#about"
-              class="text-black font-medium hover:text-secondary transition"
-              >About us</a
-            >
-          </div>
-
-          <!-- Right Side Actions -->
-          <div class="flex items-center space-x-4">
-            <!-- Theme Toggle -->
-            <button
-              onclick="toggleTheme()"
-              class="p-2 hover:bg-secondary rounded-full transition"
-              aria-label="Toggle theme"
-            >
-              <svg
-                id="themeIcon"
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                ></path>
-              </svg>
-            </button>
-
-            <!-- Shopping Cart -->
-            <button
-              class="p-2 hover:bg-secondary rounded-full transition"
-              aria-label="Shopping cart"
-            >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg>
-            </button>
-
-            <!-- Login Button -->
-            <button
-              class="hidden md:block bg-secondary text-white px-6 py-2 rounded-lg hover:bg-secondary transition font-medium"
-            >
-              Login
-            </button>
-
-            <!-- Mobile Menu Toggle -->
-            <button
-              onclick="toggleMobileMenu()"
-              class="md:hidden p-2"
-              aria-label="Toggle menu"
-            >
-              <svg
-                id="menuIcon"
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
-          <a
-            href="#home"
-            class="block text-black font-medium hover:text-secondary transition"
-            >Home</a
-          >
-          <a
-            href="#menu"
-            class="block text-black font-medium hover:text-secondary transition"
-            >Menu</a
-          >
-          <a
-            href="#about"
-            class="block text-black font-medium hover:text-secondary transition"
-            >About us</a
-          >
-          <button
-            class="w-full bg-secondary text-white px-6 py-2 rounded-lg hover:bg-[#e67d1f] transition font-medium"
-          >
-            Login
-          </button>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <!-- <main class="grid grid-cols-2 justify-around"> -->
-    <!-- <main class="lg:grid lg:grid-cols-2 lg:justify-center "> -->
     <main class=" lg:justify-center m-auto">
       <!-- <div class="w-full max-w-xl">  -->
       <div class="w-full max-w-xl mx-auto lg:mx-0">
         <!-- Main Title -->
-        <h1 class="w-full text-[24px]  font-semibold  text-center mb-6 mt-10 ">Payment method</h1>
+        <h1 class="w-full text-[24px]  font-semibold font-primary  text-center mb-6 mt-10 ">Payment method</h1>
 
         <!-- Payment Card Container -->
         <div class="w-full  mb-20 bg-white p-6 rounded-[20px]  space-y-6 ">
             
             <!-- Credit Card Section -->
             <div>
-                <h2 class="text-lg font-bold text-gray-800">Credit or Debit Card</h2>
-                <p class="text-sm text-gray-500 mb-4">Enter your card detail below.</p>
+                <h2 class="text-lg font-bold font-primary text-primary-text-color dark:text-white">Credit or Debit Card</h2>
+                <p class="text-sm text-gray-500 mb-4 font-primary">Enter your card detail below.</p>
 
                 <!-- Form -->
                 <form id="payment-form" class="space-y-4">
                     
                     <!-- Name on Card -->
                     <div>
-                        <label for="card-name" class="text-sm font-medium text-gray-700">Name on Card</label><br>
+                        <label for="card-name" class="text-sm font-medium font-primary text-gray-700">Name on Card</label><br>
                         <input type="text" id="card-name" placeholder="Your Name" class="form-input mt-1 rounded-[10px] w-full " required>
                     </div>
 
                     <!-- Card Number -->
                     <div>
-                        <label for="card-number" class="text-sm font-medium text-gray-700">Card Number</label><br>
+                        <label for="card-number" class="text-sm font-medium font-primary text-gray-700">Card Number</label><br>
                         <input type="text" id="card-number" placeholder="0001234356..." class="form-input mt-1 rounded-[10px] w-full" maxlength="19" required>
                     </div>
 
                     <!-- Expiry Date (Now full width) -->
                     <div>
-                        <label for="expiry-date" class="text-sm font-medium text-gray-700">Expiry Date</label><br>
+                        <label for="expiry-date" class="text-sm font-medium font-primary text-gray-700">Expiry Date</label><br>
                         <!-- Placeholder shows typical format (MM/YY or MM/YYYY) -->
                         <input type="text" id="expiry-date" placeholder="MM/YY" class="form-input mt-1 rounded-[10px] w-full" maxlength="5" required> 
                     </div>
 
                     <!-- CVV (Now full width) -->
                     <div>
-                        <label for="cvv" class="text-sm font-medium text-gray-700">CVV</label><br>
+                        <label for="cvv" class="text-sm font-medium font-primary text-gray-700">CVV</label><br>
                         <input type="password" id="cvv" placeholder="***" class="form-input mt-1 rounded-[10px] w-full" maxlength="4" required>
                     </div>
 
@@ -213,7 +83,7 @@
                             <label class="flex-1 cursor-pointer">
                                 <input type="radio" name="bank" value="Bank " class="hidden" checked>
                                 <div class="p-3 rounded-xl border-2 border-[var(--bakorng-red)] bg-[var(--bakorng-red)] text-white text-center font-medium shadow-md transition-all duration-150 flex items-center justify-center space-x-2"  >
-                                    <i data-lucide="building" class="w-5 h-5"></i>
+                                    <i data-lucide="building" class="w-5 h-5 font-primary"></i>
                                     <span>Bank </span>
                                 </div>
                             </label>
@@ -222,7 +92,7 @@
                             <label class="flex-1 cursor-pointer">
                                 <input type="radio" name="bank" value="Bakong Bank" class="hidden">
                                 <div class=" p-3 rounded-xl border-2 border-orange-400 text-gray-700 text-center font-medium shadow-md transition-all duration-150 flex items-center justify-center space-x-2 peer-checked:bg-orange-100 peer-checked:border-orange-500">
-                                    <span> Bakong Bank</span>
+                                    <span class="font-primary"> Bakong Bank</span>
                                     <i data-lucide="circle" class="w-4 h-4 text-orange-400"></i>
                                 </div>
                             </label>
@@ -234,13 +104,13 @@
 
             <!-- QR Code Section -->
             <div class="text-center pt-4">
-                <p class="text-sm text-gray-500 mb-2">or scan to pay:</p>
+                <p class="text-sm text-secondary-text-color font-primary mb-2">or scan to pay:</p>
                 <!-- Placeholder for QR Code Image -->
                 <img src="../assets/Qr code.png" alt="QR Code Payment" class="mx-auto border-4 border-gray-100 rounded-lg shadow-inner">
             </div>
 
             <!-- Pay Now Button -->
-            <button onclick="processPayment()" class="w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 rounded-xl shadow-md transition-colors text-lg">
+            <button onclick="processPayment()" class="font-primary w-full bg-orange-400 hover:bg-orange-500 text-white font-bold py-3 rounded-xl shadow-md transition-colors text-lg">
                 pay now
             </button>
             <div id="message-box" class="hidden bg-red-100 border-l-4 border-red-500 text-red-700 p-3 rounded" role="alert"></div>
@@ -310,29 +180,31 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary px-6 py-12">
+   <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
       <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <!-- Sponsored By Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
+          <!-- Sponsored by Section -->
           <div>
-            <h3 class="text-3xl font-bold mb-6">Sponsored by</h3>
-            <div class="flex space-x-6 items-center">
-              <!-- Logo-ISTAD -->
+            <h3
+              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color"
+            >
+              Sponsored by
+            </h3>
+            <div class="flex flex-wrap gap-4 items-center">
               <div
-                class="w-30 h-30 flex items-center justify-center flex-shrink-0"
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
               >
                 <img
-                  src="../assets/logo-istad.png"
+                  src="assets/images/logo-istad.png"
                   alt="logo-istad"
                   class="w-full h-full object-contain"
                 />
               </div>
-              <!-- Logo-GraceBuffer-->
               <div
-                class="w-35 h-35 flex items-center justify-center flex-shrink-0"
+                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
               >
                 <img
-                  src="../assets/logo-grace-buffer.png"
+                  src="assets/images/logo-grace-buffer.png"
                   alt="logo-gracebuffer"
                   class="w-full h-full object-contain"
                 />
@@ -340,28 +212,32 @@
             </div>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Quick Links Section -->
           <div>
-            <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+            <h3
+              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color"
+            >
+              Quick Links
+            </h3>
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#home"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="./index.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >Home</a
                 >
               </li>
               <li>
                 <a
-                  href="#menu"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="./pages/menu.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >Menu</a
                 >
               </li>
               <li>
                 <a
-                  href="#about"
-                  class="text-black hover:text-secondary transition font-medium"
+                  href="./pages/about.html"
+                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
                   >About us</a
                 >
               </li>
@@ -370,92 +246,94 @@
 
           <!-- Subscribe Section -->
           <div>
-            <h3 class="text-xl font-bold mb-4">Subscribe</h3>
-            <p class="text-sm text-black mb-4">
+            <h3
+              class="text-xl sm:text-2xl font-semibold font-primary mb-4 text-primary-text-color"
+            >
+              Subscribe
+            </h3>
+            <p class="text-sm sm:text-base text-primary-text-color font-primary mb-4">
               Join our newsletter for update special and menus.
             </p>
-            <div class="flex gap-2">
+            <div class="flex flex-col sm:flex-row gap-2 font-primary text-secondary-text-color">
               <input
                 type="email"
                 id="emailInput"
                 placeholder="Enter your email"
-                class="flex-1 px-4 py-2 rounded-lg border-2 border-gray-600 focus:outline-none focus:border-[#e67d1f]"
+                class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-secondary bg-white"
               />
               <button
                 onclick="subscribe()"
-                class="bg-secondary text-white px-6 py-2 rounded-lg hover:bg-[#e67d1f] transition font-medium whitespace-nowrap"
+                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-primary font-semibold whitespace-nowrap"
               >
                 Subscribe
               </button>
             </div>
-            <p class="text-xs text-black mt-3">
+            <p class="text-xs sm:text-sm text-primary-text-color mt-3 font-primary">
               By subscribing, you consent to our
-              <a href="#privacy" class="underline hover:text-secondary"
+              <a
+                href="#privacy"
+                class="underline hover:text-secondary font-medium font-primary"
                 >Privacy Policy</a
               >.
             </p>
           </div>
         </div>
 
-        <!-- Bottom Bar -->
+        <!-- Footer Bottom -->
         <div
-          class="border-t border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center"
+          class="border-t-2 border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
         >
-          <p class="text-sm font-semibold text-black mb-4 md:mb-0">
+          <p
+            class="text-sm sm:text-base font-primary font-semibold text-primary-text-color text-center md:text-left"
+          >
             © 2025 GraceBuffer, All rights reserved.
           </p>
-
-          <!-- Social Media Icons -->
-          <div class="flex space-x-4">
+          <div class="flex space-x-5">
+            <!-- Facebook -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="Website"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Facebook"
             >
-              <svg
-                class="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
                 ></path>
               </svg>
             </a>
+            <!-- Twitter -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
+              class="text-primary-text-color hover:text-secondary transition"
               aria-label="Twitter"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
                 ></path>
               </svg>
             </a>
+            <!-- Instagram -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="YouTube"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="Instagram"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M23 9.71a8.5 8.5 0 00-.91-4.13 2.92 2.92 0 00-1.72-1A78.36 78.36 0 0012 4.27a78.45 78.45 0 00-8.34.3 2.87 2.87 0 00-1.46.74c-.9.83-1 2.25-1.1 3.45a48.29 48.29 0 000 6.48 9.55 9.55 0 00.3 2 3.14 3.14 0 00.71 1.36 2.86 2.86 0 001.49.78 45.18 45.18 0 006.5.33c3.5.05 6.57 0 10.2-.28a2.88 2.88 0 001.53-.78 2.49 2.49 0 00.61-1 10.58 10.58 0 00.52-3.4c.04-.56.04-3.94.04-4.54zM9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08z"
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                 ></path>
               </svg>
             </a>
+            <!-- YouTube -->
             <a
               href="#"
-              class="text-black hover:text-secondary transition"
-              aria-label="Instagram"
+              class="text-primary-text-color hover:text-secondary transition"
+              aria-label="YouTube"
             >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                 ></path>
               </svg>
             </a>
@@ -463,11 +341,11 @@
         </div>
       </div>
     </footer>
-
-
-
     <!-- script -->
     <script src="../js/payment.js"></script>
+    <script src="../js/spaghetti.js"></script>
+    <script src="/js/cart-manager.js"></script>
+    <script defer src="../components/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 </html>
