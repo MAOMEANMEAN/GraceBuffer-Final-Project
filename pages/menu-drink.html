@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Drinks</title>
      <!-- icon -->
-    <link
-      rel="shortcut icon"
-      href="../assets/images/logo-grace-buffer.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../assets/images/logo-grace-buffer.png" type="image/x-icon" />
     <!-- tailwind-link -->
     <link rel="stylesheet" href="../src/output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,13 +13,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- flowbite-link -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <style>
+        /* Custom styles for loading and cards */
+        .drink-card {
+            transition: all 0.3s ease;
+        }
+        
+        .drink-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #see-more-btn {
+            transition: all 0.3s ease;
+            background-color: #FF8D28;
+        }
+        
+        #see-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+            background-color: #FF8D28;
+        }
+        
+        #see-more-btn:active {
+            transform: translateY(0);
+        }
+        
+        #see-more-btn.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        
+        .line-clamp-1 {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        #add-cart{
+          background-color: #FF8D28;
+        }
+    </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-darkmode">
     <!-- Header -->
+    <div id="navbar-container"></div>
+
     <!-- main -->
-    <main class="  to-amber-50 h-screen flex items-center justify-center  p-4">
-        <section class="container  flex bg-white rounded-2xl ">
+    <main class="   h-screen flex items-center justify-center  p-4">
+        <section class="  flex  rounded-2xl ">
             <div class="flex flex-col md:flex-row">
                 <!-- Text Content -->
                 <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
@@ -36,7 +94,7 @@
                     <!-- <h1 class="text-gray-600 font-semibold text-5xl mb-6 leading-relaxed">
                     flavor
                 </h1> -->
-                    <p class="text-secondary-text-color font-medium font-primary text-[18px] mb-6 leading-relaxed">
+                    <p class="text-secondary-text-color dark:text-gray-100 font-medium font-primary text-[18px] mb-6 leading-relaxed">
                         Sip Through the Seasons: Your Perfect Pairing for Every Moment of the Year. Our menu is always
                         changing to
                         keep things exciting! Whether you need a warm-up, a cool-down, or just a little boost.
@@ -51,12 +109,10 @@
 
                 <!-- Image Section -->
                 <div
-                    class="w-full md:w-1/2 from-red-100 to-amber-100 flex items-center justify-center mt-[10%] lg:m-12   ">
-                    <!-- Festive decorative elements -->
-                    <!-- <div class="absolute -top-4 -right-4 w-24 h-24 bg-red-500 rounded-full opacity-10"></div> -->
-                    <!-- <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-amber-400 rounded-full opacity-10"></div> -->
+                    class="w-full md:w-1/2 from-red-100 to-amber-100 flex items-center justify-center mt-[0%] lg:m-12   ">
+                   
                     <img class="w-[800px] h-[300px] " src="../assets/images/products/drinks/tea.gif" alt="tea">
-                    <img class="w-[800px] h-[300px] grid xl:w-full sm:w-[100px]" src="../assets/images/products/drinks/ice-latte.jpg" alt="">
+                    <img class="w-[800px] h-[300px] grid xl:w-full sm:w-[100px]" src=" ../assets/images/products/drinks/ice-latte.jpg" alt="">
                     <img class="w-[280px] h-[400px] absolute flex justify-center" src="../assets/images/products/drinks/greentea.jpg" alt="">
 
                 </div>
@@ -64,199 +120,528 @@
 
     
     </main>
+
+    
     <!-- Drinks Menu Section -->
-    <section class="max-w-7xl mx-auto px-6 py-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-24">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold font-primary text-primary-text-color dark:text-white mb-4">Our Menu</h2>
-            <p class="text-secondary-text-color font-primary text-lg">Discover our delicious selection of beverages</p>
+            <h2 class="text-4xl font-bold font-primary text-primary-text-color dark:text-white  ">Our Drinks Menu</h2>
+            <p class="text-secondary-text-color font-primary text-lg dark:text-gray-100">Discover our delicious selection of beverages</p>
         </div>
 
         <!-- Loading Spinner -->
         <div id="loading" class="text-center py-12">
             <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-secondary"></div>
-            <p class="mt-4 text-secondary-text-color">Loading drinks...</p>
+            <p class="mt-4 text-secondary-text-color font-primary">Loading drinks...</p>
         </div>
 
-        <!-- Drinks Container -->
-        <div id="drinks-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+        <!-- Error Message -->
+        <div id="error-message" class="hidden text-center py-8 bg-red-50 dark:bg-red-900/20 rounded-lg mb-8">
+            <p id="error-text" class="text-red-600 dark:text-red-400 font-medium"></p>
+        </div>
 
-        <!-- SEE MORE BUTTON -->
-        <div class="text-center mt-10">
-            <button id="see-more-btn"
-                class="hidden bg-secondary text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-700 transition">
-                See More
+        <!-- Drinks Container - 4 cards per row -->
+        <div id="drinks-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"">
+            <!-- Drinks will be loaded here dynamically -->
+        </div>
+
+        <!-- See More Button Container -->
+        <div id="see-more-container" class="text-center mt-12 mb-8 hidden">
+            <button id="see-more-btn" type="button" 
+                    class="bg-secondary  px-8 py-3 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl text-white transition-all duration-300">
+                See More Drinks
+                <span class="ml-2">↓</span>
             </button>
+            <p id="remaining-count" class="text-gray-500 text-sm mt-2 hidden"></p>
+        </div>
+        
+        <!-- All Loaded Message -->
+        <div id="all-loaded-message" class="hidden text-center py-8">
+            <p class="text-gray-500 font-medium">All drinks are loaded. Enjoy browsing!</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
-          <!-- Sponsored by Section -->
-          <div>
-            <h3
-              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color"
-            >
-              Sponsored by
-            </h3>
-            <div class="flex flex-wrap gap-4 items-center">
-              <div
-                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
-              >
-                <img
-                  src="../assets/images/logo-istad.png"
-                  alt="logo-istad"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div
-                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
-              >
-                <img
-                  src="../assets/images/logo-grace-buffer.png"
-                  alt="logo-gracebuffer"
-                  class="w-full h-full object-contain"
-                />
-              </div>
+ <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
+    <div class="max-w-7xl mx-auto">
+        <!-- Main grid: 1 column on mobile, 2 columns on medium+ screens -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8">
+            <!-- Left Column: Sponsored by -->
+            <div>
+                <h3 class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color dark:text-white">
+                    Sponsored by
+                </h3>
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center">
+                        <img src="../assets/images/logo-istad.png" alt="logo-istad" class="w-full h-full object-contain">
+                    </div>
+                    <div class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center">
+                        <img src="../assets/images/logo-grace-buffer.png" alt="logo-gracebuffer" class="w-full h-full object-contain">
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <!-- Quick Links Section -->
-          <div>
-            <h3
-              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color"
-            >
-              Quick Links
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="../index.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="menu.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >Menu</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >About us</a
-                >
-              </li>
-            </ul>
-          </div>
+            <!-- Right Column: Quick Links and Subscribe stacked -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <!-- Quick Links Section -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color dark:text-white">
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="../index.html" class="text-primary-text-color dark:text-white hover:text-secondary transition font-medium font-primary text-sm lg:text-base">Home</a>
+                        </li>
+                        <li>
+                            <a href="menu.html" class="text-primary-text-color dark:text-white hover:text-secondary transition font-medium font-primary text-sm lg:text-base">Menu</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="text-primary-text-color dark:text-white hover:text-secondary transition font-medium font-primary text-sm lg:text-base">About us</a>
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Subscribe Section -->
-          <div>
-            <h3
-              class="text-xl sm:text-2xl font-semibold font-primary mb-4 text-primary-text-color"
-            >
-              Subscribe
-            </h3>
-            <p class="text-sm sm:text-base text-primary-text-color font-primary mb-4">
-              Join our newsletter for update special and menus.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-2 font-primary text-secondary-text-color">
-              <input
-                type="email"
-                id="emailInput"
-                placeholder="Enter your email"
-                class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-secondary bg-white"
-              />
-              <button
-                onclick="subscribe()"
-                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-primary font-semibold whitespace-nowrap"
-              >
-                Subscribe
-              </button>
+                <!-- Subscribe Section -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-semibold font-primary mb-4 text-primary-text-color dark:text-white">
+                        Subscribe
+                    </h3>
+                    <p class="text-sm sm:text-base text-primary-text-color dark:text-white font-primary mb-4">
+                        Join our newsletter for update special and menus.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-2 font-primary text-secondary-text-color">
+                        <input type="email" id="emailInput" placeholder="Enter your email"
+                               class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:border-secondary bg-white dark:bg-gray-800 dark:text-white">
+                        <button onclick="subscribe()"
+                                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-primary font-semibold whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-xs sm:text-sm text-primary-text-color dark:text-white mt-3 font-primary">
+                        By subscribing, you consent to our
+                        <a href="#privacy" class="underline hover:text-secondary font-medium font-primary">Privacy Policy</a>.
+                    </p>
+                </div>
             </div>
-            <p class="text-xs sm:text-sm text-primary-text-color mt-3 font-primary">
-              By subscribing, you consent to our
-              <a
-                href="#privacy"
-                class="underline hover:text-secondary font-medium font-primary"
-                >Privacy Policy</a
-              >.
-            </p>
-          </div>
         </div>
 
         <!-- Footer Bottom -->
-        <div
-          class="border-t-2 border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p
-            class="text-sm sm:text-base font-primary font-semibold text-primary-text-color text-center md:text-left"
-          >
-            © 2025 GraceBuffer, All rights reserved.
-          </p>
-          <div class="flex space-x-5">
-            <!-- Facebook -->
-            <a
-              href="#"
-              class="text-primary-text-color hover:text-secondary transition"
-              aria-label="Facebook"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
-                ></path>
-              </svg>
-            </a>
-            <!-- Twitter -->
-            <a
-              href="#"
-              class="text-primary-text-color hover:text-secondary transition"
-              aria-label="Twitter"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                ></path>
-              </svg>
-            </a>
-            <!-- Instagram -->
-            <a
-              href="#"
-              class="text-primary-text-color hover:text-secondary transition"
-              aria-label="Instagram"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                ></path>
-              </svg>
-            </a>
-            <!-- YouTube -->
-            <a
-              href="#"
-              class="text-primary-text-color hover:text-secondary transition"
-              aria-label="YouTube"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                ></path>
-              </svg>
-            </a>
-          </div>
+        <div class="border-t-2 border-black/20 dark:border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm sm:text-base font-primary font-semibold text-primary-text-color dark:text-white text-center md:text-left">
+                © 2025 GraceBuffer, All rights reserved.
+            </p>
+            <div class="flex space-x-5">
+                <!-- Facebook -->
+                <a
+                    href="#"
+                    class="text-primary-text-color dark:text-white hover:text-secondary transition"
+                    aria-label="Facebook"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- Twitter -->
+                <a
+                    href="#"
+                    class="text-primary-text-color dark:text-white hover:text-secondary transition"
+                    aria-label="Twitter"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- Instagram -->
+                <a
+                    href="#"
+                    class="text-primary-text-color dark:text-white hover:text-secondary transition"
+                    aria-label="Instagram"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                        ></path>
+                    </svg>
+                </a>
+                <!-- YouTube -->
+                <a
+                    href="#"
+                    class="text-primary-text-color dark:text-white hover:text-secondary transition"
+                    aria-label="YouTube"
+                >
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
     <!-- script -->
-     <script src="../components/navbar.js"></script>
-     <script src="../js/spaghetti.js"></script>
-     <script src="/js/cart-manager.js"></script>
-    <script type="module" src="../store/get-data.js"></script>
-    <script type="module" src="../store/see-more.js"></script>
+    <script src="../components/navbar.js"></script>
+    <script src="../js/spaghetti.js"></script>
+    <script src="/js/cart-manager.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    
+    <!-- Drink menu specific JavaScript -->
+    <script>
+        // API Configuration
+        const baseUrl = "https://gracebuffer-api.srengchipor.dev/api/v1/";
+        
+        // State variables
+        let allDrinks = [];
+        let displayedCount = 8; // Initial display count (2 rows)
+        const itemsPerLoad = 8; // Items to load per click (2 more rows)
+        
+        // DOM elements
+        const drinksContainer = document.getElementById('drinks-container');
+        const loadingElement = document.getElementById('loading');
+        const errorMessage = document.getElementById('error-message');
+        const errorText = document.getElementById('error-text');
+        const seeMoreContainer = document.getElementById('see-more-container');
+        const seeMoreBtn = document.getElementById('see-more-btn');
+        const remainingCount = document.getElementById('remaining-count');
+        const allLoadedMessage = document.getElementById('all-loaded-message');
+        
+        // Function to fetch drinks from API
+        async function fetchDrinks() {
+            try {
+                loadingElement.style.display = 'block';
+                errorMessage.classList.add('hidden');
+                seeMoreContainer.classList.add('hidden');
+                allLoadedMessage.classList.add('hidden');
+                
+                // First, get all categories to find Drink category UUID
+                const categoriesResponse = await fetch(`${baseUrl}categories`, {
+                    headers: { 'accept': '*/*' }
+                });
+                
+                if (!categoriesResponse.ok) {
+                    throw new Error('Failed to fetch categories');
+                }
+                
+                const categoriesData = await categoriesResponse.json();
+                
+                // Find Drink category UUID
+                let drinkCategoryUuid = null;
+                if (Array.isArray(categoriesData)) {
+                    const drinkCategory = categoriesData.find(
+                        cat => cat.name.toLowerCase().includes('drink') || 
+                               cat.name.toLowerCase().includes('beverage') ||
+                               cat.name.toLowerCase().includes('coffee') ||
+                               cat.name.toLowerCase().includes('tea')
+                    );
+                    drinkCategoryUuid = drinkCategory ? drinkCategory.uuid : null;
+                }
+                
+                if (!drinkCategoryUuid) {
+                    // Try to fetch directly from products endpoint as fallback
+                    console.log('Drink category not found, fetching all products...');
+                    const productsResponse = await fetch(`${baseUrl}products?size=100`, {
+                        headers: { 'accept': '*/*' }
+                    });
+                    
+                    if (!productsResponse.ok) {
+                        throw new Error('Failed to fetch products');
+                    }
+                    
+                    const productsData = await productsResponse.json();
+                    allDrinks = productsData.data?.content || [];
+                } else {
+                    // Fetch products by category UUID
+                    console.log(`Fetching drinks from category: ${drinkCategoryUuid}`);
+                    const drinksResponse = await fetch(
+                        `${baseUrl}products/get-by-category/${drinkCategoryUuid}?size=100`,
+                        { headers: { 'accept': '*/*' } }
+                    );
+                    
+                    if (!drinksResponse.ok) {
+                        throw new Error('Failed to fetch drinks');
+                    }
+                    
+                    const drinksData = await drinksResponse.json();
+                    allDrinks = drinksData.data?.content || [];
+                }
+                
+                // If no drinks found
+                if (allDrinks.length === 0) {
+                    showError('No drinks available at the moment.');
+                    return;
+                }
+                
+                console.log(`Found ${allDrinks.length} drinks`);
+                
+                // Render initial drinks
+                renderDrinks();
+                
+                // Show "See More" button if there are more drinks
+                if (allDrinks.length > displayedCount) {
+                    seeMoreContainer.classList.remove('hidden');
+                    updateButtonText();
+                } else {
+                    allLoadedMessage.classList.remove('hidden');
+                }
+                
+            } catch (error) {
+                console.error('Error fetching drinks:', error);
+                showError('Failed to load drinks. Please try again later.');
+            } finally {
+                loadingElement.style.display = 'none';
+            }
+        }
+        
+        // Function to show error message
+        function showError(message) {
+            errorText.textContent = message;
+            errorMessage.classList.remove('hidden');
+        }
+        
+        // Function to create drink card HTML
+        function createDrinkCard(drink) {
+            const imageUrl = drink.thumbnail || drink.images || 
+                           drink.imageUrl || 
+                           `https://via.placeholder.com/400x300?text=${encodeURIComponent(drink.name)}`;
+            const price = drink.price ? `$${parseFloat(drink.price).toFixed(2)}` : '$0.00';
+            const description = drink.description || 'Delicious beverage made with quality ingredients';
+            
+            return `
+                <div class="drink-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group fade-in">
+                    <div class="relative overflow-hidden">
+                        <img src="${imageUrl}" 
+                             alt="${drink.name}"
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/400x300?text=Drink+Image'">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2 group-hover:text-secondary transition-colors line-clamp-1">
+                            ${drink.name}
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
+                            ${description}
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-secondary">${price}</span>
+                            <button id="add-cart" class="add-to-cart-btn bg-secondary text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors font-medium">
+                                ADD TO CART
+                            </button>
+                        
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to render drinks
+        function renderDrinks() {
+            // Clear container only on initial load
+            if (displayedCount <= itemsPerLoad) {
+                drinksContainer.innerHTML = '';
+            }
+            
+            // Get drinks to display
+            const drinksToShow = allDrinks.slice(0, displayedCount);
+            
+            // Create and append cards
+            const fragment = document.createDocumentFragment();
+            
+            // Only add new cards (not the ones already displayed)
+            const startIndex = displayedCount - itemsPerLoad;
+            const newDrinks = allDrinks.slice(startIndex, displayedCount);
+            
+            newDrinks.forEach(drink => {
+                const cardDiv = document.createElement('div');
+                cardDiv.innerHTML = createDrinkCard(drink);
+                
+                // Add click event for Add to Cart button
+                const addToCartBtn = cardDiv.querySelector('.add-to-cart-btn');
+                if (addToCartBtn) {
+                    addToCartBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        addToCart(drink);
+                    });
+                }
+                
+                // Add click event for entire card (for product detail page)
+                const card = cardDiv.querySelector('.drink-card');
+                card.addEventListener('click', (e) => {
+                    if (!e.target.closest('.add-to-cart-btn')) {
+                        if (drink.uuid) {
+                            window.location.href = `drink-detail.html?id=${drink.uuid}`;
+                        }
+                    }
+                });
+                
+                fragment.appendChild(cardDiv);
+            });
+            
+            drinksContainer.appendChild(fragment);
+        }
+        
+        // Function to add item to cart
+        function addToCart(drink) {
+            const cartItem = {
+                id: drink.uuid || drink.id,
+                name: drink.name,
+                price: parseFloat(drink.price) || 0,
+                image: drink.thumbnail || drink.images || drink.imageUrl,
+                quantity: 1
+            };
+            
+            // Check if cartManager exists
+            if (typeof window.addToCart === 'function') {
+                window.addToCart(cartItem);
+                showNotification(`Added ${drink.name} to cart!`);
+            } else {
+                // Fallback if cart manager not loaded
+                alert(`Added ${drink.name} to cart!\nPrice: $${parseFloat(drink.price).toFixed(2)}`);
+            }
+        }
+        
+        // Function to show notification
+        function showNotification(message) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in-up';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('animate-fade-out-down');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+        
+        // Function to update button text
+        function updateButtonText() {
+            const remaining = allDrinks.length - displayedCount;
+            if (remaining > 0) {
+                seeMoreBtn.innerHTML = `See More (${remaining} more) <span class="ml-2">↓</span>`;
+                remainingCount.textContent = `${remaining} more drinks available`;
+                remainingCount.classList.remove('hidden');
+            } else {
+                seeMoreBtn.innerHTML = 'All Drinks Loaded';
+                seeMoreBtn.disabled = true;
+                remainingCount.classList.add('hidden');
+                allLoadedMessage.classList.remove('hidden');
+            }
+        }
+        
+        // Function to load more drinks
+        function loadMoreDrinks() {
+            // Disable button and show loading state
+            seeMoreBtn.disabled = true;
+            seeMoreBtn.classList.add('loading');
+            seeMoreBtn.innerHTML = 'Loading... <span class="ml-2 animate-spin">⟳</span>';
+            
+            // Simulate loading delay for better UX
+            setTimeout(() => {
+                // Increase displayed count
+                displayedCount += itemsPerLoad;
+                
+                // Render more drinks
+                renderDrinks();
+                
+                // Update button state
+                seeMoreBtn.disabled = false;
+                seeMoreBtn.classList.remove('loading');
+                updateButtonText();
+                
+                // Scroll to show new items
+                if (displayedCount > itemsPerLoad) {
+                    seeMoreBtn.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+                
+                // Hide button if all drinks are shown
+                if (displayedCount >= allDrinks.length) {
+                    seeMoreContainer.classList.add('hidden');
+                    allLoadedMessage.classList.remove('hidden');
+                }
+            }, 500);
+        }
+        
+        // Event listener for See More button
+        seeMoreBtn.addEventListener('click', loadMoreDrinks);
+        
+        // Subscribe function
+        function subscribe() {
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            alert(`Thank you for subscribing with: ${email}`);
+            emailInput.value = '';
+        }
+        
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.classList.toggle("hidden");
+        }
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOutDown {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(20px); }
+            }
+            
+            .animate-fade-in-up {
+                animation: fadeInUp 0.3s ease-out;
+            }
+            
+            .animate-fade-out-down {
+                animation: fadeOutDown 0.3s ease-in;
+            }
+            
+            .animate-spin {
+                animation: spin 1s linear infinite;
+            }
+            
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', fetchDrinks);
+    </script>
 </body>
 </html>
