@@ -55,6 +55,10 @@
       animation: slide-in 0.3s ease-out;
     }
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
 </head>
 <body class="bg-background-light dark:bg-background-darkmode min-h-screen">
 
@@ -65,20 +69,20 @@
     <div class="max-w-5xl w-full">
       
       <!-- Main Container with Flexbox -->
-      <div class="bg-gradient-to-br from-white via-pink-50 to-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row backdrop-blur-sm">
+      <div class="bg-white/10 dark:bg-gray-200 rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row backdrop-blur-sm">
         
         <!-- Left Side - Image -->
-        <div class="md:w-[45%] p-8 flex items-center justify-center">
-          <img src="../assets/images/products/Sign in.gif" alt="Login Illustration" class="w-full max-w-sm object-contain">
+        <div class="md:w-[45%]  p-8 flex items-center justify-center">
+          <img src="../assets/images/products/Sign in.gif" alt="Login Illustration" class="w-full rounded-2xl max-w-sm object-contain">
         </div>
 
         <!-- Right Side - Form -->
-        <div class="md:w-[55%] p-6 md:p-10 flex flex-col justify-center bg-white/40 backdrop-blur-md rounded-2xl md:rounded-l-3xl">
+        <div class="md:w-[55%] p-6 md:p-10 flex flex-col justify-center bg-white/50 backdrop-blur-md rounded-2xl md:rounded-l-3xl">
           
           <!-- Title -->
           <div class="mb-6">
             <h2 class="text-3xl md:text-4xl font-bold font-primary text-primary-text mb-1">
-              Welcome <span class="text-secondary">Back</span>
+              Welcome <span class="text-orange-400">Back</span>
             </h2>
             <p class="text-secondary-text text-base font-primary">Please Enter Your Details</p>
           </div>
@@ -130,7 +134,7 @@
                 <input type="checkbox" id="rememberMe" class="w-4 h-4 text-secondary border-gray-300 rounded focus:ring-secondary accent-secondary">
                 <span class="ml-2 text-xs text-secondary-text font-primary">Remember me</span>
               </label>
-              <a href="#" class="text-xs text-secondary hover:underline font-medium font-primary">
+              <a href="#" class="text-xs text-orange-400 hover:underline font-medium font-primary">
                 Lost password?
               </a>
             </div>
@@ -138,7 +142,7 @@
             <!-- Submit Button -->
             <button 
               type="submit"
-              class="w-full bg-secondary hover:bg-orange-600 text-white font-semibold font-primary py-2.5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] hover:shadow-lg mt-4 text-sm"
+              class="w-full bg-orange-400 hover:bg-orange-500 text-white font-semibold font-primary py-2.5 rounded-xl transition-all duration-200 transform hover:scale-[1.02] hover:shadow-lg mt-4 text-sm"
             >
               Login
             </button>
@@ -162,106 +166,89 @@
   </div>
 
   <!-- Footer -->
-    <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-12">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8">
-          <!-- Sponsored by Section -->
-          <div>
-            <h3
-              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color"
-            >
-              Sponsored by
-            </h3>
-            <div class="flex flex-wrap gap-4 items-center">
-              <div
-                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
-              >
-                <img
-                  src="assets/images/logo-istad.png"
-                  alt="logo-istad"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div
-                class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center"
-              >
-                <img
-                  src="assets/images/logo-grace-buffer.png"
-                  alt="logo-gracebuffer"
-                  class="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Links Section -->
-          <div>
-            <h3
-              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color"
-            >
-              Quick Links
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="./index.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../pages/menu.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >Menu</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../pages/about.html"
-                  class="text-primary-text-color hover:text-secondary transition font-medium font-primary text-sm lg:text-base"
-                  >About us</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Subscribe Section -->
-          <div>
-            <h3
-              class="text-xl sm:text-2xl font-semibold font-primary mb-4 text-primary-text-color"
-            >
-              Subscribe
-            </h3>
-            <p class="text-sm sm:text-base text-primary-text-color font-primary mb-4">
-              Join our newsletter for update special and menus.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-2 font-primary text-secondary-text-color">
-              <input
-                type="email"
-                id="emailInput"
-                placeholder="Enter your email"
-                class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-secondary bg-white"
+  <footer class="bg-primary px-4 sm:px-6 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8">
+        <!-- Sponsored by Section -->
+        <div class="md:col-span-2 lg:col-span-1 md:flex md:flex-col md:items-center lg:items-start">
+          <h3 class="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
+            Sponsored by
+          </h3>
+          <div class="flex flex-wrap gap-4 items-center">
+            <div class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center">
+              <img
+                src="../assets/images/logo-istad.png"
+                alt="logo-istad"
+                class="w-full h-full object-contain"
               />
-              <button
-                onclick="subscribe()"
-                class="bg-secondary text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-primary font-semibold whitespace-nowrap"
-              >
-                Subscribe
-              </button>
             </div>
-            <p class="text-xs sm:text-sm text-primary-text-color mt-3 font-primary">
-              By subscribing, you consent to our
-              <a
-                href="#privacy"
-                class="underline hover:text-secondary font-medium font-primary"
-                >Privacy Policy</a
-              >.
-            </p>
+            <div class="w-32 h-32 sm:w-36 sm:h-36 flex items-center justify-center">
+              <img
+                src="../assets/images/logo-grace-buffer.png"
+                alt="logo-gracebuffer"
+                class="w-full h-full object-contain"
+              />
+             </div>
           </div>
         </div>
 
-        <!-- Footer Bottom -->
+        <!-- Quick Links Section -->
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-900">
+            Quick Links
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a 
+                href="/index.html"
+                class="text-gray-900 hover:text-orange-500 transition font-medium text-sm lg:text-base"
+              >Home</a>
+            </li>
+            <li>
+              <a 
+                href="./menu.html"
+                class="text-gray-900 hover:text-orange-500 transition font-medium text-sm lg:text-base"
+              >Menu</a>
+            </li>
+            <li>
+              <a 
+                href="./about.html"
+                class="text-gray-900 hover:text-orange-500 transition font-medium text-sm lg:text-base"
+              >About us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Subscribe Section -->
+        <div>
+          <h3 class="text-xl sm:text-2xl font-semibold mb-4 text-gray-900">
+            Subscribe
+          </h3>
+          <p class="text-sm sm:text-base text-gray-700 mb-4">
+            Join our newsletter for update special and menus.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              class="flex-1 px-4 py-2.5 text-sm sm:text-base rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500 bg-white text-gray-900"
+            />
+            <button
+              onclick="subscribe()"
+              class="bg-orange-500 text-white px-6 py-2.5 text-sm sm:text-base rounded-lg hover:bg-orange-600 transition font-semibold whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p class="text-xs sm:text-sm text-gray-700 mt-3">
+            By subscribing, you consent to our
+            <a href="#privacy" class="underline hover:text-orange-500 font-medium">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+
+       <!-- Footer Bottom -->
         <div
           class="border-t-2 border-black/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
         >
@@ -274,7 +261,7 @@
             <!-- Facebook -->
             <a
               href="#"
-              class="text-primary-text-color hover:text-secondary transition"
+              class="text-black hover:text-orange-400 transition"
               aria-label="Facebook"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -286,7 +273,7 @@
             <!-- Twitter -->
             <a
               href="#"
-              class="text-primary-text-color hover:text-secondary transition"
+              class="text-primary-text-color hover:text-orange-400 transition"
               aria-label="Twitter"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -298,7 +285,7 @@
             <!-- Instagram -->
             <a
               href="#"
-              class="text-primary-text-color hover:text-secondary transition"
+              class="text-primary-text-color hover:text-orange-400 transition"
               aria-label="Instagram"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -310,7 +297,7 @@
             <!-- YouTube -->
             <a
               href="#"
-              class="text-primary-text-color hover:text-secondary transition"
+              class="text-primary-text-color hover:text-orange-400 transition"
               aria-label="YouTube"
             >
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -321,8 +308,9 @@
             </a>
           </div>
         </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
+
 
   <!-- ✅ IMPORTANT: Load navbar.js FIRST -->
   <script src="../components/navbar.js"></script>
