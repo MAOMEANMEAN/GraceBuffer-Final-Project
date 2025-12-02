@@ -1,3 +1,5 @@
+
+
 // store/menu.js - Menu page product rendering
 
 "use strict";
@@ -9,6 +11,11 @@ console.log("Menu Products:", productData);
 
 // Get container
 const containerCard = document.getElementById("products-grid");
+const seeMoreBtn = document.getElementById("see-more-btn");
+
+// State management
+let currentProducts = [];
+let isExpanded = false;
 
 if (!containerCard) {
     console.error("Container with id 'products-grid' not found!");
@@ -16,20 +23,59 @@ if (!containerCard) {
     renderMenuProducts(productData);
 }
 
-// Render products function
+// Render products function - Shows 8 cards initially
 function renderMenuProducts(products) {
     if (!products || products.length === 0) {
         containerCard.innerHTML = '<p class="col-span-full text-center text-gray-600">No products available</p>';
         return;
     }
 
+    currentProducts = products;
+    isExpanded = false;
+
     containerCard.innerHTML = '';
     containerCard.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6';
-
-    products.forEach(product => {
+    
+    // ✅ ONLY show first 8 cards (2 rows × 4 cards)
+    products.slice(0, 8).map(product => {
         const productCard = createProductCard(product);
         containerCard.appendChild(productCard);
     });
+    
+    updateSeeMoreButton();
+}
+
+// Update See More button visibility
+function updateSeeMoreButton() {
+    if (!seeMoreBtn) return;
+    
+    // Show button only if there are more than 8 products and not expanded
+    if (currentProducts.length > 8 && !isExpanded) {
+        seeMoreBtn.style.display = 'block';
+    } else {
+        seeMoreBtn.style.display = 'none';
+    }
+}
+
+// Handle See More button click - Shows 16 cards
+function handleSeeMore() {
+    isExpanded = true;
+    
+    containerCard.innerHTML = '';
+    containerCard.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6';
+    
+    // ✅ Show 16 cards (4 rows × 4 cards)
+    currentProducts.slice(0, 16).map(product => {
+        const productCard = createProductCard(product);
+        containerCard.appendChild(productCard);
+    });
+    
+    updateSeeMoreButton();
+}
+
+// Attach event listener to See More button
+if (seeMoreBtn) {
+    seeMoreBtn.addEventListener('click', handleSeeMore);
 }
 
 // Create product card element (matching home page style)
@@ -213,3 +259,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Also update immediately
 updateCartCount();
+
+
+
