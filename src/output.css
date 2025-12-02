@@ -46,6 +46,7 @@
     --color-pink-300: oklch(82.3% 0.12 346.018);
     --color-pink-400: oklch(71.8% 0.202 349.761);
     --color-pink-500: oklch(65.6% 0.241 354.308);
+    --color-pink-600: oklch(59.2% 0.249 0.584);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
@@ -357,6 +358,9 @@
   .z-10 {
     z-index: 10;
   }
+  .z-20 {
+    z-index: 20;
+  }
   .z-50 {
     z-index: 50;
   }
@@ -416,6 +420,9 @@
   }
   .my-10 {
     margin-block: calc(var(--spacing) * 10);
+  }
+  .ms-2 {
+    margin-inline-start: calc(var(--spacing) * 2);
   }
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
@@ -681,6 +688,9 @@
   .w-24 {
     width: calc(var(--spacing) * 24);
   }
+  .w-28 {
+    width: calc(var(--spacing) * 28);
+  }
   .w-30 {
     width: calc(var(--spacing) * 30);
   }
@@ -758,6 +768,9 @@
   }
   .flex-grow {
     flex-grow: 1;
+  }
+  .origin-top-right {
+    transform-origin: 100% 0;
   }
   .translate-x-0 {
     --tw-translate-x: calc(var(--spacing) * 0);
@@ -855,6 +868,13 @@
   .gap-20 {
     gap: calc(var(--spacing) * 20);
   }
+  .space-y-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
   .space-y-2 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
@@ -902,6 +922,13 @@
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-5 {
@@ -1332,6 +1359,9 @@
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -1406,6 +1436,9 @@
   }
   .text-center {
     text-align: center;
+  }
+  .text-left {
+    text-align: left;
   }
   .text-right {
     text-align: right;
@@ -1550,6 +1583,9 @@
   .text-orange-700 {
     color: var(--color-orange-700);
   }
+  .text-pink-600 {
+    color: var(--color-pink-600);
+  }
   .text-primary-text-color {
     color: var(--color-primary-text-color);
   }
@@ -1643,6 +1679,13 @@
   .ring {
     --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-1 {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .ring-black {
+    --tw-ring-color: var(--color-black);
   }
   .blur-2xl {
     --tw-blur: blur(var(--blur-2xl));
@@ -1805,6 +1848,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-amber-700);
+      }
+    }
+  }
+  .hover\:bg-gray-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-50);
       }
     }
   }
@@ -1979,14 +2029,30 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+  .focus\:ring-amber-500 {
+    &:focus {
+      --tw-ring-color: var(--color-amber-500);
+    }
+  }
   .focus\:ring-orange-500 {
     &:focus {
       --tw-ring-color: var(--color-orange-500);
     }
   }
+  .focus\:ring-pink-500 {
+    &:focus {
+      --tw-ring-color: var(--color-pink-500);
+    }
+  }
   .focus\:ring-secondary {
     &:focus {
       --tw-ring-color: var(--color-secondary);
+    }
+  }
+  .focus\:ring-offset-2 {
+    &:focus {
+      --tw-ring-offset-width: 2px;
+      --tw-ring-offset-shadow: var(--tw-ring-inset,) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
     }
   }
   .focus\:outline-none {
@@ -2456,69 +2522,6 @@
 @layer utilities {
   .font-extra-bold {
     font-weight: 700;
-  }
-  .bg-primary {
-    background-color: var(--color-primary);
-  }
-  .bg-secondary {
-    background-color: var(--color-secondary);
-  }
-  .bg-background-light {
-    background-color: var(--color-background-light);
-  }
-  .text-primary {
-    color: var(--color-primary);
-  }
-  .text-secondary {
-    color: var(--color-secondary);
-  }
-  .text-primary-text-color {
-    color: var(--color-primary-text-color);
-  }
-  .text-secondary-text-color {
-    color: var(--color-secondary-text-color);
-  }
-  .border-primary {
-    border-color: var(--color-primary);
-  }
-  .border-secondary {
-    border-color: var(--color-secondary);
-  }
-  .hover\:bg-primary:hover {
-    background-color: var(--color-primary);
-  }
-  .hover\:bg-secondary:hover {
-    background-color: var(--color-secondary);
-  }
-  .hover\:text-primary:hover {
-    color: var(--color-primary);
-  }
-  .hover\:text-secondary:hover {
-    color: var(--color-secondary);
-  }
-  .dark .dark\:bg-background-darkmode {
-    background-color: var(--color-background-darkmode);
-  }
-  .dark .dark\:text-darkmode-text-color {
-    color: var(--color-darkmode-text-color);
-  }
-  .dark .dark\:text-darkmode-description-color {
-    color: var(--color-darkmode-description-color);
-  }
-  .dark .dark\:border-secondary {
-    border-color: var(--color-secondary);
-  }
-  .dark .dark\:bg-secondary {
-    background-color: var(--color-secondary);
-  }
-  .dark .dark\:text-secondary {
-    color: var(--color-secondary);
-  }
-  .font-primary {
-    font-family: var(--font-primary);
-  }
-  .font-secondary {
-    font-family: var(--font-secondary);
   }
 }
 @property --tw-translate-x {
