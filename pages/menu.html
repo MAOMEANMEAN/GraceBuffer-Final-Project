@@ -19,14 +19,18 @@
       href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
       rel="stylesheet"
     />
+      <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
   </head>
 
-  <body class="bg-background-light dark:bg-background-darkmode">
+  <body class="bg-background-light  dark:bg-background-darkmode">
 
 
     <!-- Main Content -->
     <main>
-      <section class="w-full bg-white py-16">
+      <section class="w-full dark:bg-background-darkmode py-16">
         <div
           class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6"
         >
@@ -49,7 +53,7 @@
             </h3>
 
             <p
-              class="text-secondary-text-color text-lg font-primary leading-relaxed max-w-xl"
+              class="text-secondary-text-color dark:text-gray-100  text-lg font-primary leading-relaxed max-w-xl"
             >
               “We believe that moments of pure indulgence should never be
               skipped. Go ahead—treat yourself to that extra layer of chocolate
@@ -59,14 +63,14 @@
         </div>
       </section>
 
-      <section class="w-full bg-white py-16">
+      <section class="w-full py-16">
         <div
           class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-center px-6"
         >
           <!-- LEFT TEXT -->
           <div class="space-y-4">
             <h1
-              class="text-6xl font-extrabold font-primary text-primary-text-color dark:text-white"
+              class="text-6xl font-extrabold font-primary text-gray-800 dark:text-white"
             >
               Delicious
             </h1>
@@ -75,7 +79,7 @@
             </h2>
 
             <p
-              class="text-gray-500 text-xl font-primary leading-relaxed max-w-md"
+              class="text-gray-500 text-xl font-primary leading-relaxed max-w-md dark:text-gray-100"
             >
               _It is elegant and indulgent, combining crisp pastry layers with
               creamy and sweet elements, making it visually appealing.
@@ -93,7 +97,7 @@
               ></div>
 
               <!-- Inner white shadow ring -->
-              <div class="inset-12 rounded-full bg-white shadow-xl"></div>
+              <div class="inset-12 rounded-full dark shadow-xl"></div>
 
               <!-- Main Image -->
               <img
@@ -107,7 +111,7 @@
           <div class="space-y-8">
             <!-- CARD 1 -->
             <div
-              class="flex items-center bg-linear-to-r from-secondary to-orange-400 text-white rounded-full shadow-lg p-4 pr-10"
+              class="flex items-center  from-secondary to-orange-400 text-white rounded-full shadow-lg p-4 pr-10"
             >
               <img
                 src="https://img.freepik.com/premium-photo/pastry_682290-607.jpg"
@@ -118,7 +122,7 @@
 
             <!-- CARD 2 -->
             <div
-              class="flex items-center bg-white rounded-full shadow-lg p-4 pr-10"
+              class="flex items-center dark rounded-full shadow-lg p-4 pr-10"
             >
               <img
                 src="https://www.homeydishes.com/wp-content/uploads/2025/11/Apple-Caramel-Pastry-Bombs.jpg"
@@ -132,7 +136,7 @@
 
             <!-- CARD 3 -->
             <div
-              class="flex items-center bg-white rounded-full shadow-lg p-4 pr-10"
+              class="flex items-center dark rounded-full shadow-lg p-4 pr-10"
             >
               <img
                 src="https://i.pinimg.com/originals/63/e9/66/63e96601937d9b15c5fd21866338a1da.jpg"
@@ -146,7 +150,7 @@
           </div>
         </div>
       </section>
-      <section class="w-full bg-white py-16">
+      <section class="w-full dark py-16">
         <div class="max-w-7xl mx-auto gap-10 items-center px-6">
           <div class="w-full flex items-center gap-4">
             <div
@@ -245,7 +249,7 @@
         </div>
       </section>
       <!-- Products Grid Section -->
-      <section class="w-full bg-white py-16">
+      <section class="w-full  py-16">
         <div class="max-w-7xl mx-auto px-6">
           <h2 class="text-4xl font-bold text-gray-800 mb-8 dark:text-white">Our Menu</h2>
 
@@ -257,10 +261,9 @@
             <!-- Products will be loaded here by JavaScript -->
           </div>
         </div>
-         <div class="flex justify-center mt-8">
-         <button id="see-more-btn" type="button" class="border bg-orange-400 rounded h-[40px] w-[240] p-4 text-white">See more</button>
+       <div class="flex justify-center mt-8">
+         <button id="see-more-btn" type="button" class="border bg-orange-400 rounded h-[40px] w-[130px]">See more</button>
        </div>
-        
       </section>
     </main>
 
@@ -271,7 +274,7 @@
           <!-- Sponsored by Section -->
           <div>
             <h3
-              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color dark:text-white"
+              class="text-3xl sm:text-4xl font-bold font-primary mb-6 text-primary-text-color"
             >
               Sponsored by
             </h3>
@@ -300,7 +303,7 @@
           <!-- Quick Links Section -->
           <div>
             <h3
-              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color dark:text-white"
+              class="text-xl sm:text-2xl font-semibold font-primary mb-4 sm:mb-6 text-primary-text-color "
             >
               Quick Links
             </h3>

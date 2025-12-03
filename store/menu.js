@@ -1,7 +1,7 @@
 
 
 // store/menu.js - Menu page product rendering
-
+// card menu
 "use strict";
 import { getData } from "./get-data.js";
 
@@ -36,7 +36,7 @@ function renderMenuProducts(products) {
     containerCard.innerHTML = '';
     containerCard.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6';
     
-    // ✅ ONLY show first 8 cards (2 rows × 4 cards)
+    // ONLY show first 8 cards (2 rows × 4 cards)
     products.slice(0, 8).map(product => {
         const productCard = createProductCard(product);
         containerCard.appendChild(productCard);
@@ -79,6 +79,8 @@ if (seeMoreBtn) {
 }
 
 // Create product card element (matching home page style)
+
+// card-menu
 function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'bg-white rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer';
@@ -92,8 +94,8 @@ function createProductCard(product) {
             <h3 class="text-xl font-semibold font-primary mb-2">${product.name}</h3>
             <p class="text-gray-600 font-primary text-sm mb-4 line-clamp-2">${product.description || 'Delicious product'}</p>
             <div class="flex justify-between items-center">
-                <span class="text-xl font-semibold font-primary text-secondary">$${product.price.toFixed(2)}</span>
-                <button class="add-cart-btn font-primary bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">
+                <span class="text-xl font-semibold font-primary text-orange-400">$${product.price.toFixed(2)}</span>
+                <button class="add-cart-btn font-primary bg-orange-400 text-white px-4 py-2 rounded-lg hover:bg-orange-400 transition-colors">
                     ADD TO CART
                 </button>
             </div>

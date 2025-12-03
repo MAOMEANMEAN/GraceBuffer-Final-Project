@@ -112,7 +112,7 @@ class DynamicNavbar {
       <div class="relative">
         <!-- User Avatar Button -->
         <button id="user-menu-button" class="flex items-center gap-1 sm:gap-2 hover:bg-amber-400 rounded-full transition p-1 pr-2 sm:pr-3">
-          <div class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-md">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 bg-linear-to-br from-amber-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-lg shadow-md">
             ${initials}
           </div>
           <span class="hidden sm:block text-gray-800 font-medium text-sm">${fullName.split(' ')[0]}</span>

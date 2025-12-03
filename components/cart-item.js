@@ -9,7 +9,7 @@ export function createCartItem(item) {
             <div class="flex gap-4">
                 
                 <!-- Product Image -->
-                <div class="w-24 h-24 flex-shrink-0">
+                <div class="w-24 h-24 shrink-0">
                     <img 
                         src="${item.image || '../assets/images/placeholder.jpg'}" 
                         alt="${item.name || item.product?.name}"

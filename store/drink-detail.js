@@ -1,4 +1,6 @@
 // Enhanced Product Detail - Merged drink and pastry functionality with stock management
+
+
 const baseUrl = "https://gracebuffer-api.srengchipor.dev/api/v1/";
 
 // State management
